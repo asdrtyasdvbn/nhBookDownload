@@ -7,7 +7,11 @@ import getImgUrl
 import threadDownload
 
 class gentleman():
-    def __init__(self, url :str):
+    def __init__(self):
+        # establish gentleman
+        print("\n###############################################################################\n")
+
+    def downloadImg(self, url :str):
         self.url = url
         self.urlObj = getImgUrl.getImgUrl(self.url)
         print("Title\t: %s" % self.urlObj.bookTitle )
@@ -48,19 +52,24 @@ class gentleman():
             print("Error\t: ")
         finally:
             print("Cost\t: Total %s Secs." %str(time.time()-stt))
-
-        
+    
+    def __del__(self):
+        os.system('pause')
 
 if __name__ == "__main__":
+
     exitGentleman = 0
+    Gentleman = gentleman()
+
     while ( exitGentleman == 0 ) :
-        print("###############################################################################\n")
         print("> Input nhUrl 'https://nhentai.net/g/XXXXXX/' to Download, 0 to Exit")
         url = str(input())
+
         if ( url == '0' ) :
-            print("Exit.\n")
-            os.system('pause')
+            print("\n> Exit.")
             break
         else :    
-            gentleman = gentleman(url)
-            
+            Gentleman.downloadImg(url)
+        print("\n###############################################################################\n")
+
+    Gentleman = None

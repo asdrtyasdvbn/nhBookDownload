@@ -26,7 +26,7 @@ class getImgUrl:
         for x in range(9):
             if specChars[x] in self.bookTitle:
                 self.bookTitle = self.bookTitle.replace( specChars[x] , changeChars[specChars[x]] )
-                print("Illegal Characters, Replace "+ specChars[x] +" by " + changeChars[specChars[x]] )
+                print("\n> Illegal Characters, Replace "+ specChars[x] +" by " + changeChars[specChars[x]] + '\n' )
             else :
                 pass
                 
